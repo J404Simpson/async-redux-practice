@@ -35,9 +35,7 @@ class LoadSubreddit extends React.Component {
     return (
       <div>
         <p><input placeholder='Enter topic' name='topic' onChange={this.handleChange} value={this.state.topic}/></p>
-        <button onClick={() => this.getPosts(this.state.topic)}>
-    Fetch Posts
-        </button>
+        <button onClick={() => this.getPosts(this.state.topic)}>Fetch Posts</button>
       </div>
     )
   }
