@@ -24,11 +24,18 @@ class LoadSubreddit extends React.Component {
     })
   }
 
+  getPosts (topic) {
+    this.props.dispatch(fetchPosts(topic))
+    this.setState({
+      topic: ''
+    })
+  }
+
   render () {
     return (
       <div>
         <p><input placeholder='Enter topic' name='topic' onChange={this.handleChange} value={this.state.topic}/></p>
-        <button onClick={() => this.props.dispatch(fetchPosts(this.state.topic))}>
+        <button onClick={() => this.getPosts(this.state.topic)}>
     Fetch Posts
         </button>
       </div>
